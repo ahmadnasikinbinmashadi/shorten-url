@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
     Route::get('login', 'LoginController@index')->name('admin.getLogin');
     Route::post('login', 'LoginController@store')->name('admin.postLogin');
+    // Route::post('login', 'LoginController@store')->name('admin.postLogin');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'as' => 'admin.'], function () {
